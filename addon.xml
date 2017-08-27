@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.synology.download" name="Synology Download" version="0.0.1" provider-name="Gabriel de Tassigny">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+
+        <import addon="script.module.simplejson" version="3.3.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="main.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">UI for your Synology Download Station</summary>
+        <description lang="en_GB"></description>
+        <language></language>
+        <platform>linux osx</platform>
+        <license>MIT</license>
+        <forum></forum>
+        <website></website>
+        <email>gabriel@multivac.cc</email>
+        <source></source>
+        <news></news>
+        <disclaimer></disclaimer>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
