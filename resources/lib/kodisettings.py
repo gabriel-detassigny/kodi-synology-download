@@ -9,4 +9,7 @@ class Configuration:
         return self.addon.getSetting('password')
 
     def get_url(self):
-        return self.addon.getSetting('protocol') + '://' + self.addon.getSetting('ip_address') + ':' + self.addon.getSetting('port')
+        url = self.addon.getSetting('protocol') + '://'
+        url += self.addon.getSetting('ip_address')
+        url += ':' + self.addon.getSetting('port')
+        return url

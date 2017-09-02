@@ -8,7 +8,8 @@ class Communicator:
         self.authenticated = False
 
     def __del__(self):
-        self.logout()
+        if self.authenticated:
+            self.logout()
 
     def get_dl_task_list(self):
         if self.authenticated is False:
@@ -32,6 +33,7 @@ class Communicator:
             'query': 'SYNO.API.Auth,SYNO.DownloadStation.Task'
         }
         response = requests.get(base_url + 'query.cgi', params=payload)
+        self.__check_response_for_errors(response)
         body = response.json()
         self.api_infos = body['data']
 
@@ -49,6 +51,7 @@ class Communicator:
             'format': 'cookie'
         }
         response = requests.get(url, params=payload)
+        self.__check_response_for_errors(response)
         body = response.json()
         self.authenticated = body['success']
         self.cookies = response.cookies
@@ -67,3 +70,7 @@ class Communicator:
 
     def __get_base_api_url(self):
         return self.configuration.get_url() + '/webapi/'
+
+    def __check_response_for_errors(self, response):
+        if response.status_code != requests.codes.ok:
+            response.raise_for_status()
