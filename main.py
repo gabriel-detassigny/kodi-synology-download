@@ -11,6 +11,4 @@ import xbmcaddon
 ADDON = xbmcaddon.Addon()
 kodilogging.config()
 
-script.show_dialog()
-
-
+script.run()

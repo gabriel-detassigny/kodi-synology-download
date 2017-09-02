@@ -2,20 +2,21 @@
 
 from resources.lib import kodiutils
 from resources.lib import kodilogging
+from resources.lib import communicator
+from resources.lib import kodisettings
 import logging
 import xbmcaddon
 import xbmcgui
 
-
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 
-
-# Put your code here, this is just an example showing
-# a textbox as soon as this addon gets called
-def show_dialog():
+def run():
     addon_name = ADDON.getAddonInfo('name')
 
-    line1 = "Hello World!"
+    config = kodisettings.Configuration(ADDON)
+    comm = communicator.Communicator(config)
 
-    xbmcgui.Dialog().ok(addon_name, line1)
+    taskList = comm.get_dl_task_list()
+
+    xbmcgui.Dialog().ok(addon_name, taskList['tasks'][0]['title'])

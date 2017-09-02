@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-    <setting id="debug" type="bool" label="32001" default="false"/>
+    <category label="32000">
+      <setting id="user" type="text" label="32001"/>
+      <setting id="password" type="text" label="32002" option="hidden"/>
+      <setting id="ip_address" type="ipaddress" label="32003"/>
+      <setting id="port" type="text" label="32004" default="5000"/>
+      <setting id="protocol" type="text" label="32005" default="http"/>
+    </category>
 </settings>
-
