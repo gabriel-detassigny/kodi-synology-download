@@ -4,6 +4,7 @@ from resources.lib import kodiutils
 from resources.lib import kodilogging
 from resources.lib import communicator
 from resources.lib import kodisettings
+from resources.lib import kodigui
 import logging
 import xbmcaddon
 import xbmcgui
@@ -26,7 +27,10 @@ def run():
     else:
         if comm.authenticated:
             taskList = comm.get_dl_task_list()
-            xbmcgui.Dialog().ok(addon_name, taskList['tasks'][0]['title'])
+            window = kodigui.TaskListWindow()
+            window.add_headers()
+            window.add_tasks(taskList['tasks'])
+            window.doModal()
         else:
             msg = "Error! Authentication failed\n"
             msg += "Please verify your username/password in your settings"
