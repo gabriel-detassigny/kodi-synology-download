@@ -18,7 +18,8 @@ class Communicator:
         payload = {
             'api': 'SYNO.DownloadStation.Task',
             'version': self.api_infos['SYNO.DownloadStation.Task']['maxVersion'],
-            'method': 'list'
+            'method': 'list',
+            'additional': 'transfer'
         }
         response = requests.get(url, params=payload, cookies=self.cookies)
         body = response.json()
