@@ -4,7 +4,7 @@ class TaskListWindow(xbmcgui.Window):
     def add_headers(self):
         self.addControl(xbmcgui.ControlLabel(x=190, y=25, width=600, height=50, label='Title'))
         self.addControl(xbmcgui.ControlLabel(x=800, y=25, width=100, height=50, label='Status'))
-        self.addControl(xbmcgui.ControlLabel(x=920, y=25, width=150, height=50, label='Percentage'));
+        self.addControl(xbmcgui.ControlLabel(x=920, y=25, width=150, height=50, label='Percentage'))
 
     def add_tasks(self, taskList):
         y = 75
