@@ -10,5 +10,4 @@ More features / improvements will be added later, including :
 - pausing / resuming a download task
 - refreshing the window at regular intervals
 - a less depressing UI
-- loading screen while waiting for Synology's response
 - unit tests
