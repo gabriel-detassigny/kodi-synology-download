@@ -1,16 +1,16 @@
 import xbmcgui
 
 class Sizes:
-    X_TITLE = 190
-    X_STATUS = 800
-    X_PERCENT = 980
+    X_TITLE = 100
+    X_STATUS = 700
+    X_PERCENT = 840
 
     Y_HEADER = 25
     Y_HEADER_MARGIN = 75
-    Y_TASK_MARGIN = 30
+    Y_TASK_MARGIN = 35
 
     WIDTH_TITLE = 600
-    WIDTH_STATUS = 150
+    WIDTH_STATUS = 180
     WIDTH_PERCENT = 150
 
     HEIGHT_HEADER = 50
